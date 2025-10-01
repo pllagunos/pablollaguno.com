@@ -8,25 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #1a202c;
-            color: #e2e8f0;
-        }
-        .text-gradient {
-            background: linear-gradient(90deg, #64ffda, #1ee0ac);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
-        .nav-link.active {
-            color: #64ffda;
-        }
-    </style>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="bg-gray-900 text-gray-200">
 
@@ -60,34 +42,30 @@
         <section id="projects" class="py-20">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-gradient">Projects</h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project 1: Kiln Control System -->
-                <div class="project-card bg-gray-800 p-6 rounded-xl shadow-lg transition-transform duration-300">
-                    <h3 class="text-2xl font-semibold text-teal-300 mb-2">Kiln Automation System</h3>
+                <a href="projects/ElectricKiln.html" class="project-card block bg-gray-800 p-6 rounded-xl shadow-lg transition-transform duration-300">
+                    <h3 class="text-2xl font-semibold text-teal-300 mb-2">Electric Kilns</h3>
+                    <p class="text-sm text-gray-400 mb-4">Embedded Systems, Multiphysics modeling, CAD, C++, IoT</p>
+                    <p class="text-gray-300">
+                        Designed and built electric kilns. The system includes custom GUIs, IoT connectivity, and data logging to InfluxDB with visualization via Grafana.
+                    </p>
+                </a>
+                
+                <a href="projects/GasKilnControl.html" class="project-card block bg-gray-800 p-6 rounded-xl shadow-lg transition-transform duration-300">
+                    <h3 class="text-2xl font-semibold text-teal-300 mb-2">Control System for Gas Kiln</h3>
                     <p class="text-sm text-gray-400 mb-4">Embedded Systems, C++, PLC, IoT, Data Logging</p>
                     <p class="text-gray-300">
                         Designed and built an automated kiln control system, starting with ESP32s and transitioning to a robust Beckhoff PLC. The system includes custom GUIs, IoT connectivity, and data logging to InfluxDB with visualization via Grafana, significantly improving efficiency at a ceramic factory.
                     </p>
-                </div>
+                </a>
 
-                <!-- Project 2: 1D Neutron Transport Solver -->
-                <div class="project-card bg-gray-800 p-6 rounded-xl shadow-lg transition-transform duration-300">
+                <a href="projects/NeutronSolver.html" class="project-card block bg-gray-800 p-6 rounded-xl shadow-lg transition-transform duration-300">
                     <h3 class="text-2xl font-semibold text-teal-300 mb-2">1D Neutron Transport Solver</h3>
-                    <p class="text-sm text-gray-400 mb-4">Computational Physics, Numpy, Reactor Physics</p>
+                    <p class="text-sm text-gray-400 mb-4">Computational Physics, Matlab, Reactor Physics</p>
                     <p class="text-gray-300">
                         Developed a computational solver for 1D neutron transport problems as a part of a Reactor Physics course. The project involved implementing numerical methods to model neutron behavior, showcasing a strong foundation in computational physics and scientific programming.
                     </p>
-                </div>
+                </a>
 
-                <!-- Project 3: Masters Degree at TUM Munich -->
-                <div class="project-card bg-gray-800 p-6 rounded-xl shadow-lg transition-transform duration-300">
-                    <h3 class="text-2xl font-semibold text-teal-300 mb-2">Masters at TUM</h3>
-                    <p class="text-sm text-gray-400 mb-4">Applied Engineering Physics, Quantum Mechanics, Computational Physics</p>
-                    <p class="text-gray-300">
-                        Currently pursuing a Master's in Applied Engineering Physics, focusing on cutting-edge topics like Quantum Mechanics, Computational Physics, and Fusion Research. This academic journey has deepened my theoretical knowledge and problem-solving skills.
-                    </p>
-                </div>
-
-                <!-- Add more project cards here if needed -->
 
             </div>
         </section>
@@ -133,7 +111,6 @@
         document.addEventListener('DOMContentLoaded', () => {
             const navLinks = document.querySelectorAll('.nav-link');
             const sections = document.querySelectorAll('section');
-
             const highlightNavLink = () => {
                 let current = '';
                 sections.forEach(section => {
@@ -142,7 +119,6 @@
                         current = section.getAttribute('id');
                     }
                 });
-
                 navLinks.forEach(link => {
                     link.classList.remove('active');
                     if (link.href.includes(current)) {
@@ -150,7 +126,6 @@
                     }
                 });
             };
-
             window.addEventListener('scroll', highlightNavLink);
             highlightNavLink(); // Initial call
         });

@@ -1,0 +1,90 @@
+** Academic **
+
+* Electrolysis?
+
+* Fusor (demo and Tec versions)
+
+* Cansat
+
+* Neutron 1D solver
+
+* MPS gradient descent
+
+* Docker/Linux stuff for neutronics?
+
+
+** Fabrica/Kilns **
+
+* electric kiln project (ElectricKiln):
+- careful with influx credentials!!!
+- modify readme
+	- differentiate between max31856 version and others
+	- solidworks/COMSOL files or images of design
+	- physical construction
+	- web server config, captive portal, influx+grafana
+	- control box design and construction
+	- ads thermocouple implementation
+- add PCBs
+	- include remark of the modifications of relay driver and ads TC card
+- maybe some marketing on forums/youtube ?
+
+* Gas kiln ESP32 (HornoGas / espnows)
+HornoGas: esp32 control system using espnow network
+- add readme (spaghetti code! mention better newer version)
+	- use readme from Arduino folder to list features 
+	- ie Grafana, influx, espnow
+	- burner analysis w/ python and matlab (ML)
+- add PCB if possible
+espnow:
+- add repository, probably only of espnow dpt west or all?
+- add readme
+- add PCB if possible
+
+* chimney actuator
+- create detailed readme
+- for readme use ppt
+- add PCB
+- add solidworks and parts
+- mention Gil and Ricardo
+
+* Modbus ESP32 Gas Kiln controller (Gas-Kiln-Controller / TFT-Horno-Gas)
+- 2 repositories is necessary (yes?)
+- add readme (TFT) and modify readme (horno-gas)
+	- mention platformio, simulation mode
+	- dpt infrastructure as well
+- add PCBs
+- explain dpt and influx, careful with credentials??
+
+* Beckhoff PLC Gas Kiln Controller (DemoHorno)
+- change name
+- add readme
+	- recipe handler
+	- ads communication with esp32 for influx stack
+	- Grafana alarm system with oncall
+	- siemens LME burner safety
+	- Belimo 4-20mA modulation control
+- explain esp32 ads comm and add code (or different repo?)
+
+* Cabinet design and construction
+- show different versions of gas kiln cabinet
+- show electric kiln cabinet?
+
+
+* Otras cosas de la fabrica:
+- Mixers, lightning, product design
+
+** CNSI **
+
+* Water heater controller
+* web server for PID tuning
+* Beckhoff DAQ + other sources -> python pandas script excel workbook generator
+* Current implementation for new loops via TwinCAT HMI and TwinCAT Measurement
+
+
+** Hobbies **
+
+* La M: 
+- jewelry studio
+- vacuum casting machine
+- successful resin casting
+

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1D Neutron Transport Solver | My Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1a202c;
+            color: #e2e8f0;
+        }
+        .text-gradient {
+            background: linear-gradient(90deg, #64ffda, #1ee0ac);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-200">
+
+    <header class="fixed top-0 left-0 w-full z-50 bg-gray-900 bg-opacity-80 backdrop-filter backdrop-blur-sm shadow-md">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="../index.html" class="text-2xl font-bold text-gradient">My Name</a>
+            <div class="flex space-x-6 text-sm font-medium">
+                <a href="../index.html#about" class="hover:text-teal-400 transition-colors duration-300">About</a>
+                <a href="../index.html#projects" class="hover:text-teal-400 transition-colors duration-300">Projects</a>
+                <a href="../index.html#hobbies" class="hover:text-teal-400 transition-colors duration-300">Hobbies</a>
+                <a href="../index.html#contact" class="hover:text-teal-400 transition-colors duration-300">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-24 pt-32">
+        <article class="prose max-w-none text-gray-300">
+            <h1 class="text-4xl md:text-5xl font-bold text-center text-teal-300 mb-4">1D Neutron Transport Equation Solver</h1>
+            <p class="text-center text-lg mb-8 text-gray-400">Computational Physics, Python, Reactor Physics</p>
+
+            <img src="../assets/images/flux-profile.png" alt="A plot showing the relative scalar flux across a 1D slab geometry." class="w-full h-auto rounded-lg mb-8 shadow-lg">
+            
+            <p>
+                This project was a computational physics exercise for a Reactor Physics course, where I developed a 1D steady-state neutron transport solver. The goal was to numerically model neutron behavior in a multi-material slab geometry, a fundamental concept in nuclear engineering and reactor design. This project was written in **Python**, showcasing my ability to translate complex physical principles into a working computational model.
+            </p>
+
+            <h2 class="text-3xl font-bold text-teal-400 mt-12 mb-4">Technical Approach</h2>
+            <ul class="list-disc list-inside space-y-2">
+                <li>**Modeling:** The solver is based on the **Boltzmann Transport Equation (BTE)**, which was simplified to a 1D form for slab geometry, with assumptions of isotropic scattering and a steady-state, monoenergetic system[cite: 1, 6, 8, 11].</li>
+                <li>**Numerical Method:** The solution was achieved using the **discrete ordinates method ($S_N$)** to handle angular discretization and an **upwind finite difference scheme** for spatial discretization[cite: 33, 59]. This approach ensures numerical stability and accurately models the directionality of neutron motion.</li>
+                <li>**Implementation:** The solver was implemented in **Python** using libraries like NumPy and Matplotlib. It performs iterative angular sweeps to solve for the scalar flux until convergence is achieved[cite: 84, 85].</li>
+            </ul>
+            
+            <h2 class="text-3xl font-bold text-teal-400 mt-12 mb-4">Results and Discussion</h2>
+            <p>
+                The final output is a plot of the relative neutron flux across different material regions: **Fuel**, **Moderator ($D_2O$)**, and a **Reflector (Be)**. The results, as seen in the figure above, show excellent agreement with theoretical predictions from my coursework, with a characteristic peak in the fuel region and kinks at the material interfaces[cite: 96, 114, 115]. The solver converged in as few as 10 iterations, demonstrating its efficiency[cite: 116].
+            </p>
+
+            <p class="text-xl font-semibold mt-8">
+                For a complete technical breakdown and access to the code, you can view the full report and the GitHub repository.
+            </p>
+            <div class="flex justify-center mt-6 space-x-4">
+                <a href="https://github.com/your-username/your-repository-name" target="_blank" class="inline-block bg-teal-500 hover:bg-teal-600 text-gray-900 font-semibold py-3 px-8 rounded-full transition-all duration-300">View GitHub Repository</a>
+                <a href="your-report.pdf" target="_blank" class="inline-block bg-gray-700 hover:bg-gray-600 text-gray-200 font-semibold py-3 px-8 rounded-full transition-all duration-300">View Full Report (PDF)</a>
+            </div>
+        </article>
+        
+        <div class="text-center mt-12">
+            <a href="../index.html#projects" class="inline-block bg-gray-700 hover:bg-gray-600 text-gray-200 font-semibold py-2 px-6 rounded-full transition-all duration-300">&larr; Back to Projects</a>
+        </div>
+    </main>
+
+    <footer class="text-center py-6 text-gray-500 text-sm">
+        &copy; 2025 My Name. All Rights Reserved.
+    </footer>
+</body>
+</html>
